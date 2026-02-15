@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User Activity Dashboard
+{% endblock %}
+
+{% block main %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<h3>User Activity Dashboard</h3>
+<div class="container_All">
+<div class="container_sep">
+
+<canvas id="daily_view"></canvas>
+
+<canvas id="daily_draw"></canvas>
+</div>
+<table class="table au">
+    <thead>
+    <tr>
+        <th scope="col">Weekly most active users(Top 5)</th>
+    </tr>
+    </thead>
+
+     <tbody>
+    {% for t in top_user %}
+
+    <tr>
+        <td>{{t}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+<script>
+    const dv=document.getElementById("daily_view");
+    const dv_label={{dv_label|tojson}};
+    const dv_value={{dv_value|tojson}};
+
+    new Chart(dv,{
+        type:"line",
+        data:{
+            labels:dv_label,
+            datasets:[{
+                label:"Daily View",
+                data:dv_value,
+                borderColor:"yellow",
+                fill: false
+            }]
+    }
+    });
+
+const dt=document.getElementById("daily_draw");
+    const dt_label={{dt_label|tojson}};
+    const dt_value={{dt_value|tojson}};
+
+    new Chart(dt,{
+        type:"line",
+        data:{
+            labels:dt_label,
+            datasets:[{
+                label:"Daily Tarot Draw",
+                data:dt_value,
+                borderColor:"green",
+                fill: false
+            }]
+    }
+    });
+
+
+
+
+</script>
+{% endblock %}
+
+

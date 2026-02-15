@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    crystals
+{% endblock %}
+
+{% block main %}
+    {% for crystal in crystals%}
+<a href="{{url_for('crystal',crystal_name=crystal.name)}}">
+    <div class="imagebg">
+    <img src="{{url_for("static",filename="crystal_image/" ~ crystal.image) }}" alt="{{crystal.name}}">
+    <p class="caption">{{crystal.name}}</p>
+    </div>
+</a>
+    {%endfor%}
+
+{% endblock %}

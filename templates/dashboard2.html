@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Content Dashboard
+{% endblock %}
+
+{% block main %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container_All">
+    <div class="wrap_tp">
+    <p class="title">Favourite rate of crystals</p>
+    <canvas class="piechart" id="favourited_rate"></canvas>
+    </div>
+
+    <div class="container_sep">
+    <p class="c_title">Crystal category choice</p>
+    <canvas class="categorypie" id="category"></canvas>
+    </div>
+
+    <div class="container_sep">
+    <p class="c_title">Weekly Top favourited Crystals</p>
+    <canvas class="fc_bar" id="favourited_crystal"></canvas>
+    </div>
+
+
+</div>
+
+<script>
+    const wtc=document.getElementById("favourited_crystal");
+    const wtc_label={{wtc_label|tojson}};
+    const wtc_value={{wtc_value|tojson}};
+
+    new Chart(wtc,{
+        type:"bar",
+        data:{
+            labels:wtc_label,
+            datasets:[{
+                label:"Weekly Top favourited Crystals(Top 3)",
+                data:wtc_value,
+                backgroundColor:["#F6C1CC","#FFD6C9","#FFF1B8","#CFE8D9","#D6E6F2","#E6D9F2","#CFE7E3","#ECECEC","#F7C8B7","#DDE6ED"]
+             }]
+    },
+     options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+    });
+
+const fr=document.getElementById("favourited_rate");
+    const fr_label={{fr_label|tojson}};
+    const fr_value={{fr_value|tojson}};
+
+    new Chart(fr,{
+        type:"pie",
+        data:{
+            labels:fr_label,
+            datasets:[{
+                data:fr_value,
+                backgroundColor:["#F6C1CC","#FFD6C9","#FFF1B8","#CFE8D9","#D6E6F2","#E6D9F2","#CFE7E3","#ECECEC","#F7C8B7","#DDE6ED"]
+            }]
+    },
+    options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+
+                }
+    });
+
+    const c=document.getElementById("category");
+    const c_label={{c_label|tojson}};
+    const c_value={{c_value|tojson}};
+
+    new Chart(c,{
+        type:"pie",
+        data:{
+            labels:c_label,
+            datasets:[{
+                data:c_value,
+                backgroundColor:["#F6C1CC","#FFD6C9","#FFF1B8","#CFE8D9","#D6E6F2","#E6D9F2","#CFE7E3","#ECECEC","#F7C8B7","#DDE6ED"]
+            }]
+    },
+     options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+
+
+                }
+    });
+
+
+
+</script>
+
+{% endblock %}

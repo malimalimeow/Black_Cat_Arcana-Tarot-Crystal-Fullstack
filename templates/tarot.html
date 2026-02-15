@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    tarot
+{% endblock %}
+
+{% block main %}
+ <h3>Reveal your future</h3>
+    <div class="container_tarot">
+        <img class="draw" src="{{url_for('static',filename='draw_card.gif')}}" alt="draw card gif">
+    <div class="contain_btn">
+    <form action="/tarot" method="post">
+        <button name="action" value="draw" type="submit" class="btn btn-light fs-3 draw_btn">Draw</button>
+    </form>
+    <form  action="/tarot" method="post">
+    <button name="action" value="record" class="btn btn-light fs-3 record">last record </button>
+    </form>
+    </div>
+    </div>
+
+    <script>
+    window.addEventListener("DOMContentLoaded",function(){
+
+    let remain = Number("{{remaining_time or 0}}");
+    let btn= document.querySelector('.draw_btn')
+    if (remain!= 0){
+        setInterval(()=>{
+            //stop the timer of this function if nothing remain
+            if (remain == 0){
+                clearInterval(timer);
+                return;
+            }
+            remain--;
+            //format remain(second) to h, m, s
+            let h = Math.floor(remain/3600);
+            let m = Math.floor((remain%3600)/60);
+            let s = remain % 60;
+
+            //format h,m,s to 2 digits
+            let hh= String(h).padStart(2,"0");
+            let mm= String(m).padStart(2,"0");
+            let ss= String(s).padStart(2,"0");
+
+            //group them together
+            let remain_time = `${hh}:${mm}:${ss}`;
+            //change button text
+
+            btn.innerHTML=`Draw after ${remain_time}`;
+             },1000);
+
+        btn.disabled=true;}
+
+        });
+    </script>
+
+
+{% endblock %}

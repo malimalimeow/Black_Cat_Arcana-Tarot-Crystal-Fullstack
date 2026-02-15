@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    favourite
+{% endblock %}
+
+{% block main %}
+    <h3>Favourite History</h3>
+    <table class="table f">
+    <thead>
+        <tr>
+            <th scope="col">Crystal</th>
+            <th scope="col">Energy</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in favourite %}
+        <tr>
+            <td><a href="{{url_for('crystal',crystal_name=f.name)}}">{{f.name}}</a></td>
+            <td>{{f.theme}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

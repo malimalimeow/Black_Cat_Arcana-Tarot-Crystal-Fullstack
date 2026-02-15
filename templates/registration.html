@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block main %}
+<div class="wrap">
+    <form action="/registration" method="post">
+      <div class="fix">
+        <div class="mb-3">
+        <input class="form-control mx-auto w-auto " autofocus autocomplete="off" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3 ">
+        <input class="form-control mx-auto w-auto " autocomplete="off" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+        <input class="form-control mx-auto w-auto fix-row" autocomplete="off" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+     </div>
+    </form>
+
+
+     <div class="noti m-0">
+            <p>username:</p>
+            <p>at least 8 characters</p>
+            <p>only accept special charater: . and _</p>
+            <p>password:</p>
+            <p>8–16 characters</p>
+            <p>1 upper letter</p>
+            <p>1 small letter</p>
+            <p>1 number</p>
+            <p>1 special character</p>
+
+        </div>
+</div>
+
+
+{% endblock %}

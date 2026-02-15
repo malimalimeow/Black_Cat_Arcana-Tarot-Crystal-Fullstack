@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    lucky
+{% endblock %}
+
+{% block main %}
+ <div class="flex_luck">
+   <img class="result_card" src="{{url_for('static',filename='tarot_image/'~ card ~'.png')}}" alt="{{card}}">
+
+   <div class="p">
+   <table class="table l">
+    <tr>
+        <th scope="row">Card name</th>
+        <td>{{card}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Keyword</th>
+        {% if card_info.keywords | length == 1 %}
+            <td>{{card_info.keywords[0]}}</td>
+
+        {% else %}
+           <td>{{card_info.keywords|join(", ")}}</td>
+        {% endif %}
+    </tr>
+
+    </table>
+    <table class="table l">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Meaning</th>
+            <th scope="col">Suggested Crystal</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">Work</th>
+        <td>{{card_info.meanings.work}}</td>
+        <form action="/choice_record" method="post">
+            <input type=hidden name="name" value="{{card_info.crystals.work}}">
+        <td><button class="choice" name="choice" value="work">{{card_info.crystals.work}}</button></td>
+        </form>
+    </tr>
+    <tr>
+        <th scope="row">Love</th>
+        <td>{{card_info.meanings.love}}</td>
+         <form action="/choice_record" method="post">
+            <input type=hidden name="name" value="{{card_info.crystals.love}}">
+        <td><button class="choice" name="choice" value="love">{{card_info.crystals.love}}</button></td>
+        </form>
+    </tr>
+
+    <tr>
+        <th scope="row">Health</th>
+        <td>{{card_info.meanings.health}}</td>
+        <form action="/choice_record" method="post">
+        <input type=hidden name="name" value="{{card_info.crystals.health}}">
+        <td><button class="choice" name="choice" value="health">{{card_info.crystals.health}}</button></td>
+        </form>
+    </tr>
+    </tbody>
+    </table>
+</div>
+</div>
+
+
+
+
+{% endblock %}

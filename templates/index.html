@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Home
+{% endblock %}
+
+{% block main %}
+   <div class="container p-0 m-0">
+
+      <div class="layer">
+      <img src="{{url_for("static",filename="tarot_button.png")}}" alt="tarot" >
+      <button class="btn_hide tarot">Tarot</button>
+      </div>
+
+      <div class="layer">
+       <img src="{{url_for("static",filename="crystal_button.jpg")}}" alt="crystal" >
+       <button class="btn_hide crystal">Crystal</button>
+      </div>
+
+      </div>
+
+   <script>
+      document.querySelector(".btn_hide.crystal").addEventListener('click',function(){
+         window.location.href="{{ url_for('crystal_showcase') }}";
+      });
+
+      document.querySelector(".btn_hide.tarot").addEventListener('click',function(){
+         window.location.href="{{ url_for('tarot') }}";
+      });
+   </script>
+
+
+{% endblock %}
