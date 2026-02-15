@@ -1,0 +1,407 @@
+body{
+    font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+    font-weight: 500;
+    border-collapse: collapse;
+    background: url("bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color:#eaf4fa;
+}
+
+/*nav bar*/
+/* Size for brand */
+nav .navbar-brand
+{
+    color:#e6d8a2;
+    font-size: small;
+}
+
+
+nav.navbar{
+  position: relative;/*sticky =stick to the top, relative = not stick to top:D*/
+  margin-top:20px;
+  width: 100%;
+  color:#e6d8a2;
+  background-color: rgba(39,75,99,0.45);
+  backdrop-filter: blur(12px); /* Applies blur to content *behind* the navbar */
+   border-radius: 14px;
+  /* For older browsers */
+  font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+  font-weight: 600;
+   border-collapse: collapse;
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000; /*keep it on the top layer*/
+}
+
+.navbar:hover{
+  color:#fff3c4; ;
+  background-color: transparent;
+
+}
+
+.wrap{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+}
+
+.noti{
+
+    color:#223942;
+    background-color: #e6fcfb;
+    padding:10px 15px;
+    max-width: 250px;
+    text-align:left;}
+
+
+
+/*index*/
+.layer {
+    height:calc((100vh - 60px) / 2);/*within the page size*/
+    width:100vw;
+    position: relative;  /*control button and img size*/
+
+}
+
+.layer img{
+     height:100%;
+    width:100%;
+
+    object-fit:cover; /*crop*/
+}
+
+.layer .btn_hide {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:none;
+    font-size:100px;
+    font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+    font-weight: 500;
+    border-collapse: collapse;
+    background-color:Transparent;
+    color:Transparent;
+
+}
+
+.layer:hover .btn_hide{
+    background-color:rgba(255,255,255,0.4);
+    color:#17233d;
+}
+
+/*crystalshowcase*/
+.imagebg {
+    display:inline-block;
+    position:relative;
+    background-color:rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    border:none;
+    z-index:1;
+    height:340px;
+    width:300px;
+    border-radius:16px;
+    box-shadow:
+    0 8px 30px rgba(0,0,0,0.3),
+    inset 0 0 30px rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+
+}
+
+.imagebg:hover {
+    box-shadow:
+    0 0 20px rgba(198,183,226,0.6);
+  transform: translateY(-4px);
+}
+
+
+.imagebg img{
+    position:absolute;
+    object-fit:contain;
+    border-color:#fffff0;
+    height:auto;
+    width:280px;
+    top:10px;
+    left:10px;
+    z-index:2;
+    box-shadow: 0 0 0 rgba(255,255,255,0.2);
+}
+
+ .imagebg .caption{
+    position:absolute;
+    font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+    font-weight: 500;
+    border-collapse: collapse;
+    color:white;
+    font-size:15px;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:3;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.1)
+}
+
+/*crystal*/
+.favourite
+{
+   position:relative;
+   height:300px;
+   width:300px;
+   margin-left:100px;
+
+}
+.favourite .picture
+{
+     display:inline-block;
+    position:absolute;
+    top:0;
+    left:10px;
+    height:100%;
+    width:100%;
+    object-fit:contain;
+    box-shadow: 0 0 0 rgba(255,255,255,0.2);
+    z-index:4;
+}
+
+ .favourite .heart{
+    position:absolute;
+    height:40px;
+    width:auto;
+    bottom:10px;
+    right:0px;
+    z-index:5;
+}
+
+.t {
+    font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+    font-weight: 500;
+    border-collapse: collapse;
+    width: 500px;
+    height:300px;
+    text-align: left;
+     border-radius:12px;
+    overflow:hidden;
+}
+
+
+
+.t th {
+    background-color: rgba(39,75,99,0.6) !important;
+    color: #eaf4fa !important;
+    border-color: rgba(19, 57, 71,0.4) !important;
+
+}
+.t td {
+     background-color: rgba(255,255,255,0.12) !important;
+     color: #eaf4fa !important;
+     border-color: rgba(19, 57, 71,0.4) !important;
+}
+
+.flex{
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+}
+
+
+/*tarot*/
+.container_tarot{
+    height:calc(100vh - 200px);
+    display:flex;
+    flex-direction: column;
+}
+
+h3{
+    text-align:center;
+     color:white;
+    text-shadow:0 0 10px rgba(0,0,0,0.3);
+
+}
+.container_tarot img{
+    width:300px;
+    height:auto;
+    margin:0 auto;
+    margin-top:0;
+}
+
+.contain_btn {
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    margin-top:auto;
+    padding-bottom:20px;
+}
+
+
+
+/*lucky*/
+.flex_luck{
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+}
+
+.flex_luck .result_card{
+
+    height:400px;
+    width:auto;
+    margin:0 auto;
+    margin-top:0;
+
+
+}
+
+/*control two table*/
+.p {
+
+    display:flex;
+    flex-direction: column;
+}
+
+.l{
+    font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+    font-weight: 500;
+    border-collapse: collapse;
+    width: 500px;
+    height: 150px;
+    text-align: left;
+    margin-right:100px;
+     border-radius:12px;
+    overflow:hidden;
+}
+
+.l th{
+    background-color:rgba(74,63,109,0.6) !important;
+    color: #e6d8a2 !important;
+    border-color: rgba(250, 242, 255,0.3) !important;
+}
+
+.l td{
+    background-color: rgba(255,255,255,0.12) !important;
+     color: #eaf4fa !important;
+     border-color: rgba(250, 242, 255,0.3) !important;
+}
+
+
+
+/*favourite*/
+.f{
+    font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+    font-weight: 500;
+    border-collapse: collapse;
+    width: 100vh;
+    height: auto;
+    text-align: center;
+    margin:auto;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.f th{
+    background-color:rgba(255, 183, 197,0.6);
+    color:#7A3E48;
+}
+
+.f td{
+    background-color:rgba(255,255,255,0.12);
+    color:	#eaf4fa;
+    border-bottom: 1px rgba(255, 183, 197, 0.5);
+
+}
+
+.f td a {
+    color:inherit;
+    text-decoration: underline;
+}
+
+.f td a:hover{
+    color:black !important;
+}
+
+.draw_btn:hover,
+.record:hover,
+.choice:hover{
+  box-shadow: 0 0 12px rgba(230,216,162,0.8);
+}
+
+
+/*dashboard*/
+.container_sep{
+    flex: 1;
+    position:relative;
+    height:300px;
+}
+
+.container_sep .c_title{
+    position:absolute;
+    top:0;
+    left:50px;
+
+}
+
+.container_sep .categorypie{
+    position:absolute;
+    top:50px;
+    right:0;
+    height:250px;
+}
+
+.container_sep .fc_bar{
+     position:absolute;
+    top:50px;
+    right:0;
+    height:250px;
+}
+
+
+
+.container_All {
+    display: flex;
+    margin: 50px auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.container_All table {
+     flex: 1;
+     font-family: 'Comfortaa', "Microsoft JhengHei", cursive;
+     font-weight: 500;
+     border-collapse: collapse;
+     border-radius: 12px;
+     overflow: hidden;
+     }
+
+.au th{
+    background-color:rgba(214, 230, 242, 0.4);
+    color:#D6E6F2;
+}
+
+.au td{
+    background-color:rgba(255,255,255,0.12);
+    color:#EAF4FA;
+}
+
+.wrap_tp .piechart {
+    position:absolute;
+    top:50px;
+    left:0;
+
+}
+
+.wrap_tp .title {
+    position:absolute;
+    top:0;
+    left:10px;
+}
+
+.wrap_tp {
+    position:relative;
+    flex:1;
+    width:auto;
+    height:500px;
+
+}
+
+
