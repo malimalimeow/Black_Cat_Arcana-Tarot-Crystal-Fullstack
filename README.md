@@ -10,6 +10,7 @@ Users draw a random tarot card, and the system suggests a crystal that may align
 
 The 78 tarot cards, their meanings, and crystal suggestions are stored in a JSON file.
 All other data is stored in crystal.db.
+
 ---
 
 ### Features:
@@ -128,6 +129,7 @@ flask run
 
 ### Credit:
 CS50X Final Project
+
 
 
 
