@@ -54,6 +54,7 @@ All other data is stored in crystal.db.
 
 ![Demo](assets/tarot_reading.png)
 *Tarot reading interface*
+
 ---
 
 ### How to run:
@@ -126,7 +127,8 @@ flask run
 ---
 
 ### Credit:
-CS50P Final Project
+CS50X Final Project
+
 
 
 
