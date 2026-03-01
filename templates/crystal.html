@@ -7,11 +7,11 @@
 {% block main %}
 <div class="flex">
     <div class="favourite">
-    <img class="picture" src="{{url_for('static',filename="crystal_image/" ~ crystal.image)}}">
+    <img class="picture" src="https://heidy-firs-app-2026-blackcat.s3.us-east-1.amazonaws.com/static/crystal_image/{{crystal.image}}">
     <form action='/crystals/{{crystal.name}}' method='post'>
         <input type="hidden" name="crystal_id" value="{{crystal.id}}">
         <button type="submit" class="btn_heart">
-        <img class="heart" src="{{url_for('static',filename='heart_empty.png')}}">
+        <img class="heart" src="https://heidy-firs-app-2026-blackcat.s3.us-east-1.amazonaws.com/static/heart_empty.png">
         </button>
     </form>
 
@@ -50,10 +50,10 @@
 
             favourite =! favourite;
             if (favourite){
-                img.src="/static/heart.png";
+                img.src="https://heidy-firs-app-2026-blackcat.s3.us-east-1.amazonaws.com/static/heart.png";
             }
             else{
-            img.src="/static/heart_empty.png";
+            img.src="https://heidy-firs-app-2026-blackcat.s3.us-east-1.amazonaws.com/static/heart_empty.png";
             };
 
         });
