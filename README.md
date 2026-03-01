@@ -1,7 +1,7 @@
 # Black CAT ARCANA-Full Stack Web Application
 
-## Hosted on Render with static assets stored on AWS S3.
-### https://black-cat-arcana-tarot-crystal-fullstack.onrender.com/
+#### Hosted on Render with static assets stored on AWS S3.
+#### https://black-cat-arcana-tarot-crystal-fullstack.onrender.com/
 
 ### Overview:
 Black CAT ARCANA is a full‑stack web application built with Flask, HTML, JavaScript, CSS, and SQLite.
@@ -132,6 +132,7 @@ flask run
 
 ### Credit:
 CS50X Final Project
+
 
 
 
