@@ -8,7 +8,7 @@
     {% for crystal in crystals%}
 <a href="{{url_for('crystal',crystal_name=crystal.name)}}">
     <div class="imagebg">
-    <img src="{{url_for("static",filename="crystal_image/" ~ crystal.image) }}" alt="{{crystal.name}}">
+    <img src="https://heidy-firs-app-2026-blackcat.s3.us-east-1.amazonaws.com/static/crystal_image/{{crystal.image}}" alt="{{crystal.name}}">
     <p class="caption">{{crystal.name}}</p>
     </div>
 </a>
