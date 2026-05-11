@@ -3,6 +3,27 @@
 #### Hosted on Render with static assets stored on AWS S3.
 #### https://black-cat-arcana-tarot-crystal-fullstack.onrender.com/
 
+## 🔑 Test Accounts
+
+**Note:** This demo is hosted on a platform with an **ephemeral file system** (Render Free Tier). New registrations will not persist after server restarts. Please use the pre-registered accounts below for testing:
+
+### 👤 Regular Users
+| # | Username | Password |
+| :--- | :--- | :--- |
+| 1 | `nightcat_102` | `Rm8!QaL23` |
+| 2 | `shadow.paw_77` | `Kt4@Zp91` |
+
+### 👑 Admin Users
+Admin accounts have exclusive access to data analytics at `/dashboard1` and `/dashboard2`.
+
+| # | Username | Password |
+| :--- | :--- | :--- |
+| 1 | `Admin.hi_` | `Password.Ad1` |
+| 2 | `Admin.hi_1` | `Password_1` |
+
+---
+
+
 ### Overview:
 Black CAT ARCANA is a full‑stack web application built with Flask, HTML, JavaScript, CSS, and SQLite.
 
